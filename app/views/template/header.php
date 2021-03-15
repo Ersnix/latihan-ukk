@@ -24,8 +24,8 @@
       </li>
     </ul>
     <span class="form-inline my-2 my-md-0">
-      <a style="color: white;margin-right: 20px;"> hi,<?php  echo $_SESSION['username']; ?></a>
-      <a class="btn btn-danger" href="<?= BASEURL ?>/login/logout">Logout</a>
+      <a class="halo"> hi,<?php  echo $_SESSION['username']; ?></a>
+      <a class="btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="<?= BASEURL ?>/login/logout">Logout</a>
     </span>
   </div>
 <?php   } ?>
@@ -44,8 +44,8 @@
       </li>
     </ul>
     <span class="form-inline my-2 my-md-0">
-      <a style="color: white;margin-right: 20px;"> hi, Admin</a>
-      <a class="btn btn-danger" href="<?= BASEURL ?>/login/logout">Logout</a>
+      <span class="halo"> hi, Admin</span>
+      <a class="btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="<?= BASEURL ?>/login/logout">Logout</a>
     </span>
   </div>
 <?php   } ?>
@@ -61,8 +61,8 @@
       </li>
     </ul>
     <span class="form-inline my-2 my-md-0">
-      <a style="color: white;margin-right: 20px;"> hi, Petugas- <?php  echo $_SESSION['username']; ?></a>
-      <a class="btn btn-danger" href="<?= BASEURL ?>/login/logout">Logout</a>
+      <a class="halo"> hi, Petugas- <?php  echo $_SESSION['username']; ?></a>
+      <a class="btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="<?= BASEURL ?>/login/logout">Logout</a>
     </span>
   </div>
 <?php   } ?>
