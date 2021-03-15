@@ -1,2 +1,2 @@
 <?php
-define('BASEURL', 'https://localhost/latihan-ukk/public');
+define('BASEURL', 'http://localhost/latihan-ukk/public');
