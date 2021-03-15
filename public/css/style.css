@@ -1,0 +1,73 @@
+.container{
+	width: 97%;
+	margin: 30px auto;
+}
+.form-group label{
+	margin-bottom: 0;
+	font-weight: bold;
+}
+.form-group textarea{
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 150px;
+	max-height: 150px;
+}
+.form-group img{
+	width: 100%;
+}
+.box{
+	padding: 50px;
+	border: 1px solid blue;
+	width: 30%;
+	margin: 100px auto;
+}
+.box-register{
+	margin: 10px auto;
+}
+.box-addptgs{
+	margin: 30px auto;
+}
+
+th,thead{
+	text-align: center;
+	vertical-align: middle;
+}
+tr{
+	height: 15px;
+	overflow: hidden;
+	
+}
+table{
+	margin-top: 30px;
+}
+.st0,.stproses,.stselesai{
+	font-weight: bold;
+}
+tbody .st0{
+	color: red;
+}
+tbody .stproses{
+	color: yellow;
+}
+tbody .stselesai{
+	color: green;
+}
+.bg-danger,.bg-warning,.bg-success{
+	color: white;
+}
+.sbmt-ms{
+	width: 400px;
+}
+.cetak{
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+	
+}
+.flex{
+	display: flex;
+}
+.fl-right{
+	height: 50px;
+	float: right;
+}

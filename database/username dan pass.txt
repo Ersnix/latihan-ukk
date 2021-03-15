@@ -1,0 +1,12 @@
+admin
+username = admin
+pass = admin
+
+
+petugas
+username = petugas1
+pass = petugas1
+
+masyarakat
+username = tuadi
+pass = tuadi
