@@ -6,7 +6,6 @@ class Masyarakat_Model{
 	public function dataPengaduan($nik){
 		$query = "SELECT * FROM pengaduan WHERE nik ='$nik'";
 		$this->db->query($query);
-		$this->db->execute();
 		return $this->db->resultSet();
 	}
 	public function addPengaduan($data,$gambar,$namagbr){

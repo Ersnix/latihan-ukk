@@ -24,7 +24,7 @@
       </li>
     </ul>
     <span class="form-inline my-2 my-md-0">
-      <a class="halo"> hi,<?php  echo $_SESSION['username']; ?></a>
+      <span class="halo"> hi,<?php  echo $_SESSION['username']; ?></span>
       <a class="btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="<?= BASEURL ?>/login/logout">Logout</a>
     </span>
   </div>
@@ -61,7 +61,7 @@
       </li>
     </ul>
     <span class="form-inline my-2 my-md-0">
-      <a class="halo"> hi, Petugas- <?php  echo $_SESSION['username']; ?></a>
+      <span class="halo"> hi, Petugas- <?php  echo $_SESSION['username']; ?></span>
       <a class="btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="<?= BASEURL ?>/login/logout">Logout</a>
     </span>
   </div>

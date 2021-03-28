@@ -76,3 +76,6 @@ tbody .stselesai{
 	color: white;
 	margin-right: 20px;
 }
+.cetakData th,.cetakData td{
+	font-size: 10px;
+}

@@ -18,25 +18,25 @@
 			<input class="form-control" type="date" name="tglakhir">
 		</div>
 		</div>
-		<input class="btn btn-primary" type="submit" name="submit" value="Cetak">
+		<input class="btn btn-primary" type="submit" name="filter" value="Cetak">
 	</form>
 	<table border="1" class="table">
 		<thead class="thead-dark">
 			<th>NIK Pengadu</th>
 			<th>Tgl Pengaduan</th>
-			<th>Pengaduan</th>
-			<th>Bukti Foto</th>			
+			<th width="30%">Pengaduan</th>
 			<th>Tgl Tanggapan</th>
-			<th>Tanggapan</th>
+			<th>Petugas</th>
+			<th width="30%">Tanggapan</th>
 		</thead>
 		<?php foreach($data as $d): ?>
 		<tbody>
 			<td><?php echo $d['nik']; ?></td>
 			<td><?php echo $d['tgl_pengaduan']; ?></td>
 			<td><?php echo $d['isi_laporan']; ?></td>
-			<td><img height="100" width="100" src="<?= BASEURL ?>/gambar/<?php echo $d['foto'] ?>">	</td>
 			<td><?php echo $d['tgl_tanggapan']; ?></td>
-			<td><?php echo $d['tanggapan']; ?></td>
+			<td><?php echo $d['nama_petugas']; ?></td>
+			<td ><?php echo $d['tanggapan']; ?></td>
 		</tbody>
 	<?php 	endforeach; ?>
 	</table>

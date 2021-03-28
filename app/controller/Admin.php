@@ -13,7 +13,7 @@ class Admin extends Controllers{
 		$this->view('template/header');
 		$this->view('admin/index',$data);
 	}
-	public function petugas(){
+	public function petugas(){ 
 		$data = $this->model('Admin_Model')->vPetugas();
 		$this->view('template/header');
 		$this->view('admin/crudPetugas/vPetugas',$data);

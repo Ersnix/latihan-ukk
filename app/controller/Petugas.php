@@ -43,12 +43,12 @@ class Petugas extends Controllers{
 	}
 	public function cetakData(){
 		$data = $this->model('Petugas_Model')->filterCetak($_POST);
-		$this->view('admin/cetakData',$data);
+		$this->view('petugas/cetakData',$data);
 	}
 	public function generateLaporan(){
 		$data = $this->model('Petugas_Model')->vGenerateLaporan();
 		$this->view('template/header');
-		$this->view('admin/generateLaporan',$data);
+		$this->view('petugas/generateLaporan',$data);
 	}
 	
 }

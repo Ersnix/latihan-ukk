@@ -8,31 +8,40 @@
 </head>
 <body>
 <div class="container">
-	<center><h1>DATA PENGADUAN DAN TANGGAPAN</h1></center>
-	<table border="1" class="table">
-		<thead class="thead-dark">
+	<center>
+		<h1>PEMERINTAH KABUPATEN BADUNG</h1>
+		<h2>DESA ADAT MENGWI</h2>
+	</center>
+	<hr>
+	<center><h3>Data Pengaduan dan tanggapan</h3></center>
+	<br>
+	<p><b>Periode :</b> <?php echo $_SESSION['filter']; ?></p>
+	<table border="1" class="table small">
+		<thead class="text-secondary">
+			<th>No</th>
 			<th>NIK Pengadu</th>
 			<th>Tgl Pengaduan</th>
-			<th>Pengaduan</th>
-			<th>Bukti Foto</th>			
+			<th width="30%">Pengaduan</th>
 			<th>Tgl Tanggapan</th>
-			<th>Tanggapan</th>
+			<th>Petugas</th>
+			<th width="30%">Tanggapan</th>
 		</thead>
-		<?php foreach($data as $d): ?>
+		<?php $no=1; foreach($data as $d): ?>
 		<tbody>
+			<td><?php echo $no; ?></td>
 			<td><?php echo $d['nik']; ?></td>
 			<td><?php echo $d['tgl_pengaduan']; ?></td>
 			<td><?php echo $d['isi_laporan']; ?></td>
-			<td><img height="100" width="100" src="<?= BASEURL ?>/gambar/<?php echo $d['foto'] ?>">	</td>
 			<td><?php echo $d['tgl_tanggapan']; ?></td>
+			<td><?php echo $d['nama_petugas']; ?></td>
 			<td><?php echo $d['tanggapan']; ?></td>
 		</tbody>
-	<?php 	endforeach; ?>
+	<?php $no++;	endforeach; ?>
 	</table>
 </div>
 </div>	
 </body>
 <script type="text/javascript">
 	window.print();
-	setTimeout(window.close,100);
+	setTimeout(window.close,300);
 </script>

@@ -42,6 +42,8 @@
 		}
 		public function logout(){
 			unset($_SESSION['login']);
+			unset($_SESSION['idLogin']);
+			unset($_SESSION['username']);
 			unset($_SESSION['nik']);
 			unset($_SESSION['level']);
 			header('Location:'.BASEURL);

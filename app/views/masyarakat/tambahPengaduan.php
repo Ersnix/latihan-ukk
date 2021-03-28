@@ -16,7 +16,7 @@
 		<div class="form-group">
 			<label>Bukti Laporan</label>	
 			<br>
-			<input type="file" name="foto" accept=".jpg,.png,.jpeg">
+			<input required="" type="file" name="foto" accept=".jpg,.png,.jpeg">
 		</div>
 		
 		<br>

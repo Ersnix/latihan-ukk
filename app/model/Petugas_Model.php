@@ -4,18 +4,16 @@ class Petugas_Model{
 		$this->db = new Database;
 	}
 	public function daftarPengaduan($status){		
-		$query = "SELECT * FROM pengaduan WHERE status='$status'";
+		$query = "CALL pengaduanStatus('$status')";
 		if ($status == "all") {
 			$query = "SELECT * FROM pengaduan";
 		}
 		$this->db->query($query);
-		$this->db->execute();
 		return $this->db->resultSet();
 	}
 	public function laporanDetail($id){
-		$query = "SELECT * FROM pengaduan WHERE id_pengaduan = '$id'";
+		$query = "CALL getPengaduanId('$id')";
 		$this->db->query($query);
-		$this->db->execute();
 		return $this->db->single();
 	}
 	public function kerjakanLaporan0($id){
@@ -44,23 +42,26 @@ class Petugas_Model{
 	public function filterCetak($data){
 		$tgl_awal = $data['tglawal'];
 		$tgl_akhir = $data['tglakhir'];
-		if ($tgl_awal == null) {
+		if ($tgl_awal == null AND $tgl_akhir != null) {
 			$tgl_awal = date('Y-m-d',strtotime('1st january 0001'));
-		}
-		if ($tgl_akhir == null) {
+			$_SESSION['filter'] = "Sampai tanggal ".date('d F Y', strtotime($tgl_akhir));
+		}elseif ($tgl_akhir == null AND $tgl_awal != null) {
 			$tgl_akhir= date('Y-m-d',strtotime('31st january 9999'));
-		}
-		if ($tgl_awal == null AND $tgl_akhir == null) {
+			$_SESSION['filter'] = "Dari ".date('d F Y', strtotime($tgl_awal))." Sampai Sekarang";
+		}elseif ($tgl_awal == null AND $tgl_akhir == null) {
 			$tgl_awal = date('Y-m-d',strtotime('1st january 0001'));
 			$tgl_akhir= date('Y-m-d',strtotime('31st january 9999'));
+			$_SESSION['filter'] = "Semua";	
+		}else{
+			$_SESSION['filter'] = date('d F Y', strtotime($tgl_awal))." - ".date('d F Y', strtotime($tgl_akhir));
 		}
-		$query = "SELECT * FROM pengaduan,tanggapan WHERE pengaduan.id_pengaduan = tanggapan.id_pengaduan AND tgl_pengaduan BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY tgl_pengaduan ASC";
+		$query = "SELECT * FROM pengaduan,tanggapan,petugas WHERE pengaduan.id_pengaduan = tanggapan.id_pengaduan AND tanggapan.id_petugas = petugas.id_petugas AND tgl_pengaduan BETWEEN '$tgl_awal' AND '$tgl_akhir' ORDER BY tgl_pengaduan ASC";
 		$this->db->query($query);
 		$this->db->execute();
 		return $this->db->resultSet();
 	}
 	public function vgenerateLaporan(){
-		$query = "SELECT * FROM pengaduan,tanggapan WHERE pengaduan.id_pengaduan = tanggapan.id_pengaduan";
+		$query = "SELECT * FROM pengaduan,tanggapan,petugas WHERE pengaduan.id_pengaduan = tanggapan.id_pengaduan AND tanggapan.id_petugas = petugas.id_petugas";
 		$this->db->query($query);
 		$this->db->execute();
 		return $this->db->resultSet();

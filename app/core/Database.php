@@ -1,7 +1,7 @@
 <?php
 class Database{
 	private $host = 'localhost';
-	private $name = 'db_latihan_ukk';
+	private $name = 'db_pengaduanMasyarakat_tuadi';
 	private $pass = '';
 	private $user = 'root';
 	private $dbh;
